@@ -4,43 +4,16 @@
             <h1 class="text-center font-bold text-xl">Log In</h1>
             <form method="POST" action="/login" class="mt-10">
                 @csrf
-                <div class="mb-6">
-                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
-                           for="email"
-                    >
-                        Email
-                    </label>
-                    <input class="border border-gray-400 p-2 w-full"
-                           type="email"
-                           name="email"
-                           id=email"
-                           value="{{ old('email') }}"
-                           required
-                    >
+                <x-form.input name="email" type="email" autocomplete="username">
+                    <x-form.error name="email" autocomplete="new-password"/>
+                </x-form.input>
 
-                    @error('email')
-                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
+                <x-form.input name="password" type="password">
+                    <x-form.error name="password"></x-form.error>
+                </x-form.input>
 
-                <div class="mb-6">
-                    <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
-                           for="password"
-                    >
-                        Password
-                    </label>
-                    <input class="border border-gray-400 p-2 w-full"
-                           type="password"
-                           name="password"
-                           id=password"
-                           required
-                    >
-                    @error('password')
-                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
-                    @enderror
-                </div>
 
-                <div class="text-center mb-6 bg-blue-400 text-white rounded-xl py-2 px-4 hover:bg-blue-600">
+                <div class="text-center mb-6 bg-blue-400 text-white rounded-xl py-2 px-4 hover:bg-blue-600 mt-6 ml-28 mr-28">
                     <button type="submit"
                             class="font-bold"
                     >

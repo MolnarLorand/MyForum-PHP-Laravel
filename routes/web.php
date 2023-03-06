@@ -35,6 +35,9 @@ Route::post('login',[SessionsController::class, 'store'])->middleware('guest');
 
 Route::post('logout',[SessionsController::class, 'destroy'])->middleware('auth');
 
+Route::get('admin/posts/create',[PostController::class, 'create'])->middleware('admin');
+Route::post('admin/posts',[PostController::class, 'store'])->middleware('admin');
+
 
 /*Route::get('/posts/{post:slug}', function (Post $post) { //{post} --> this is a wildcard
    //find a post by its slug and pass it to a view called "post"

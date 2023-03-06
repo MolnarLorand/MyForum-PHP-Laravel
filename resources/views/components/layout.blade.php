@@ -17,8 +17,14 @@
 
         <div class="mt-8 md:mt-0 flex items-center">
             @auth()
-                <span class="text-xs font-bold uppercase">Welcome, {{ auth()->user()->username }}</span>
-
+                <x-dropdown>
+                    <x-slot name="trigger">
+                        <button class="text-xs font-bold uppercase">Welcome, {{ auth()->user()->username }}</button>
+                    </x-slot>
+                    <x-dropdown-item href="/admin/posts/create" active="request()->is('admin/posts/create')">
+                        New Post
+                    </x-dropdown-item>
+                </x-dropdown>
                 <form method="POST" action="/logout" class="bg-blue-500 ml-3 rounded-full text-sm font-semibold text-white uppercase py-3 px-5">
                     @csrf
                     <button type="submit">

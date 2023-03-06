@@ -14,9 +14,8 @@
                                   class="w-full focus:outline-none focus:ring border border-blue-200 text-sm"
                                   required></textarea>
 
-            @error('body')
-            <span class='text-xs text-red-500'>{{ $message }}</span>
-            @enderror
+            <x-form.error name="body"/>
+
         </div>
         <div class="mt-2 flex justify-end">
             <button type="submit" class="bg-blue-400 text-white rounded-xl hover:bg-blue-600 py-2 px-10">Post</button>
