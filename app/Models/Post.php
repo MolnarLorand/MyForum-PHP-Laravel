@@ -42,8 +42,14 @@ class Post extends Model
                 ->orWhere('body', 'like', '%' . request('search') . '%');
         }*/
     }
-    protected $guarded = ['id']; //everything is fillable except those
+/*    protected $guarded = ['id']; //everything is fillable except those*/   //i did this in appServiceProvider
     //protected $fillable = ['title','fragment','body', 'id']; //just those are fillable
+
+    public function comments() //fk -> user_id
+    {
+        return $this->hasMany(Comment::class);
+    }
+
 
     public function category(){
         //hasOne, hasMany, belongsTo, belongsToMany -> types

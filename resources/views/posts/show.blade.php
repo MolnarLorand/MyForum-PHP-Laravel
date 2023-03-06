@@ -22,7 +22,7 @@
                 </div>
 
                 <div class="col-span-8">
-                    <div class="hidden lg:flex justify-between mb-6">
+                    <div class="hidden lg:flex justify-between mb-6 ">
                         <a href="/"
                            class="transition-colors duration-300 relative inline-flex items-center text-lg hover:text-blue-500">
                             <svg width="22" height="22" viewBox="0 0 22 22" class="mr-2">
@@ -51,22 +51,20 @@
                         {!! $post->body !!}
                     </div>
                 </div>
+
+                {{--Comment form--}}
+                @include('posts._add-comment-form')
+
+                {{--Comments--}}
+                <section class="col-span-8 col-start-5 mt-10 space-y-4">
+                    @foreach($post->comments as $comment)
+                        <x-post-comment :comment="$comment" />
+                    @endforeach
+                </section>
             </article>
         </main>
     </section>
 
-
-    {{--        <article>
-                <h1>{!!  $post->title !!}</h1>  --}}{{--$post -> this var came form web.php return view('post', ['@@@@@@post@@@@@@@@' => Post::find($slug)]);--}}{{--
-
-                <p>
-                    Created by <a href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a> in <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a> category
-                </p>
-
-                <div>{!! $post->body !!}</div> This will be treated as html
-            </article>
-
-            <a href="/">Go Back</a>--}}
 </x-layout>
 
 

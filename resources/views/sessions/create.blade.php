@@ -40,7 +40,7 @@
                     @enderror
                 </div>
 
-                <div class="text-center mb-6">
+                <div class="text-center mb-6 bg-blue-400 text-white rounded-xl py-2 px-4 hover:bg-blue-600">
                     <button type="submit"
                             class="font-bold"
                     >

@@ -21,4 +21,6 @@ class PostController extends Controller
             'post' => $post
         ]);
     }
+
+    // usually stick with 7 restfull actions-> index,show,create,store,edit,update,destroy
 }
