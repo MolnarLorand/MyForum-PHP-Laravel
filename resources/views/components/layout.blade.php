@@ -24,6 +24,9 @@
                     <x-dropdown-item href="/admin/posts/create" active="request()->is('admin/posts/create')">
                         New Post
                     </x-dropdown-item>
+                    <x-dropdown-item href="/admin/posts" active="request()->is('admin/posts')">
+                        All Posts
+                    </x-dropdown-item>
                 </x-dropdown>
                 <form method="POST" action="/logout" class="bg-blue-500 ml-3 rounded-full text-sm font-semibold text-white uppercase py-3 px-5">
                     @csrf

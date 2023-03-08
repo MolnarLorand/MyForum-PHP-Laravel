@@ -12,6 +12,9 @@
                     <li>
                         <a href="/admin/posts/create" class="{{request()->is('admin/posts/create') ? 'text-blue-400' : ''}}">New Post</a>
                     </li>
+                    <li class="mt-4">
+                        <a href="/admin/posts" class="{{request()->is('admin/posts') ? 'text-blue-400' : ''}}">All Post</a>
+                    </li>
                 </ul>
             </aside>
             <main class="flex-1">
